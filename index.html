@@ -9,7 +9,7 @@
             body { margin: 0; 
             } 
 
-            /* .class_km{
+            .class_km{
                 z-index: 1000;
             }    
 
@@ -56,7 +56,7 @@
                 u {
                     font-size: 1.5rem;
                 }
-            } */
+            } 
             #globeViz {
                 position: absolute;
                 top: 0;
@@ -64,40 +64,9 @@
                 bottom: 0;
                 left: 0;
                 background-color: black;
-                opacity: 0.4;
 
             }
 
-            .background {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-color: black;
-                opacity: 0.8;
-            }
-            .background_cover{
-                position: relative;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-
-                background-color: black;
-                opacity: 1;
-            }
-
-            .content_container {
-                display: flex;
-                position: relative;
-                padding-top: 7rem;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                z-index: 1;
-                opacity: 1;
-            }
 
             h1 {
                 font-family: Arial, Helvetica, sans-serif;
@@ -136,31 +105,6 @@
                 justify-content:center;
 
             }
-
-            .countdown-el {
-                text-align: center;
-            }
-
-            .big-text {
-                font-family: Arial, Helvetica, sans-serif;
-                font-weight: bold;
-                font-size: 5rem;
-                color: #37C391;
-                text-shadow: 0 0 0.25rem #123250;
-                line-height: 1;
-                margin: 1rem 2rem; /* 1rem top und bottom 2 rem links rechts */
-                text-align: center;
-            }
-
-            span {
-                font-family: Arial, Helvetica, sans-serif;
-                font-weight: bold;
-                text-align: center;
-                color: #37C391;
-                text-shadow: 0 0 0.25rem #123250;
-                font-size: 1.8rem;
-                margin: 1rem 2rem;   
-            } 
 
             /*Media Queries*/
 
@@ -290,48 +234,24 @@
         </style>
     
         <script src="//unpkg.com/globe.gl"></script>
-        <!--<script src="../../dist/globe.gl.js"></script>-->
         <title>Bereit für Bewegung</title>
     </head>
     <body>
         <div id="globeViz"></div>
-        <div class="background">
-            <div class="background_cover"></div>
-            <div class="content_container">
-                <h1><u>Bereit für Bewegung</u> in ...</h1>
-
-                <div class="countdown-container">
-                    <div class="countdown-el days-c">
-                        <p class="big-text" id="days"></p>
-                        <span>Tage</span>
-                    </div>
-                    <div id="countdown-el hours-c">
-                        <p class="big-text" id="hours"></p>
-                        <span>Stunden</span>
-                    </div>
-                    <div id="countdown-el minutes-c">
-                        <p class="big-text" id="minutes"></p>
-                        <span>Minuten</span>
-                    </div>
-                    <div id="countdown-el seconds-c">
-                        <p class="big-text" id="seconds"></p>
-                        <span>Sekunden</span>
-                    </div>
-                </div>
-            </div>
+        <div class="content_container">
+            <h1>Bereit für Bewegung</h1>
         </div>
-        <!-- <div class="km_situation">
-            <p><u>Aktueller Stand:</u><br><b class="km_stand">500</b> / 50.889 km <br>geschafft<br>
+        <div class="km_situation">
+            <p><u>Aktueller Stand:</u><br><b class="km_stand">0</b> / 50.889 km <br>geschafft<br>
             <a href="ranking.html">Ranking der Teams einsehen</a></p>
-        </div> -->
+        </div>
     
         <script>
             //point information
             let locations = [
-                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Stuttgart</h1>', descr: 'Hauptsitz der LBBW', lat: 48.78654, lng: 9.18164, color: '#37C391', altitude: 0.015, radius: 0.6},
-                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Mannheim</h1>', descr: '', lat: 49.48152, lng: 8.48350, color: '#37C391', altitude: 0.015, radius: 0.4},
-                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Mainz</h1>', descr: '', lat: 50.01624, lng: 8.25410, color: '#37C391', altitude: 0.015, radius: 0.4},
-                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Karlsruhe</h1>', descr: '', lat: 49.00522, lng: 8.41421, color:'#37C391', altitude: 0.015, radius: 0.4},
+                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Stuttgart</h1>', descr: 'Hauptsitz der LBBW', lat: 48.78654, lng: 9.18164, color: '#37C391', altitude: 0.015, radius: 0.8},
+                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Hamburg</h1>', descr: '', lat: 53.55167, lng: 9.98858, color: '#37C391', altitude: 0.015, radius: 0.8},
+                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Leipzig</h1>', descr: '', lat: 51.34658, lng: 12.37373, color: '#37C391', altitude: 0.015, radius: 0.8},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">New York</h1>', descr: '', lat: 40.75815, lng: -73.98238, color:'#37C391', altitude: 0.015, radius: 0.8},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Mexiko</h1>', descr: '', lat: 19.36679, lng: -99.26066, color:'#37C391', altitude: 0.015, radius: 0.8},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">São Paulo</h1>', descr: '', lat: -23.58018, lng: -46.67793, color:'#37C391', altitude: 0.015, radius: 0.8},
@@ -349,35 +269,58 @@
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Moskau</h1>', descr: '', lat: 55.75005, lng: 37.53780, color:'#37C391', altitude: 0.015, radius: 0.8},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Taschkent</h1>', descr: '', lat: 41.33758, lng: 69.28226, color:'#37C391', altitude: 0.015, radius: 0.8},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Wien</h1>', descr: '', lat: 48.20763, lng: 16.37081, color:'#37C391', altitude: 0.015, radius: 0.8},
-                {name: '<h3 style="font-family:Arial;font-size: 1.5rem;color: #37C391">Start</h3>', descr: '', lat: -23.58018, lng: -46.67793, color:'#123250', altitude: 0, radius: 1},
                 {name: '<h3 style="font-family:Arial;font-size: 1.5rem;color: #37C391;">Derzeitiger Stand</h3>', descr: '', lat: -23.58018, lng: -46.67793, color:'#123250', altitude: 0, radius: 1}
             ];
 
             // Arc Data for Path
-            /*const arcsData = [1].map(() => ({
-                startLat: -23.58018,
-                startLng: -46.67793,
-                endLat: 48.78654,
-                endLng: 14.18164
-            }));
+            const N = 2;
+            const dataArc = [[]];
+            const provWay =[[-23.58018, -46.67793, 19.36679, -99.26066], [19.36679, -99.26066, 40.75815, -73.98238], [40.75815, -73.98238, 46.65027, -79.37880], [46.65027, -79.37880, 51.52081, -0.07922],
+                            [51.52081, -0.07922, 53.55167, 9.98858], [53.55167, 9.98858, 48.78654, 9.18164], [48.78654,9.18164, 51.34658, 12.37373], [51.34658, 12.37373, 48.20763, 16.37081],
+                            [48.20763, 16.37081, 41.08184, 29.02198], [41.08184, 29.02198, 55.75005, 37.53780], [55.75005, 37.53780, 41.33758, 69.28226], [41.33758, 69.28226, 25.21257, 55.28136],
+                            [25.21257, 55.28136, 18.92582, 72.82412], [18.92582, 72.82412, 39.95379, 116.46452], [39.95379, 116.46452, 37.56853, 126.97824], [37.56853, 126.97824, 31.13394, 121.77796],
+                            [31.13394, 121.77796, 21.02131, 105.85564], [21.02131, 105.85564, 1.27710, 103.84800], [1.27710, 103.84800, -6.19541, 106.82189]];
 
-            let pathWay = {'features':[{'name': 'start','lat': 48.78654, 'lng': 9.18164}],
-                            'features': [{'name': 'end', 'lat': 48.78654, 'lng': 14.18164}]}*/
+            const arcsData = provWay.map((currElement, index) => ({
+                startLat: provWay[index][0],
+                startLng: provWay[index][1],
+                endLat: provWay[index][2],
+                endLng: provWay[index][3],
+                color: 'red',
+                arcDashAnimateTime: 0,
+                arcStroke: .75,
+                arcAltitude: .08,
+                arcDashGap: .05,
+                arcDashLength: .15
+                }));
+            const arcData2 = dataArc.map((currElement, index) => ({
+                startLat: dataArc[index][0],
+                startLng: dataArc[index][1],
+                endLat: dataArc[index][2],
+                endLng: dataArc[index][3],
+                color: '#37C391',
+                arcDashAnimateTime: 5000,
+                arcStroke: 1.35,
+                arcAltitude: .2,
+                arcDashGap: .25,
+                arcDashLength: .75
+                }));
 
+            const arcDataConcat = arcsData.concat(arcData2);
 
             const world =  Globe()
                 .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')          
                 .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-                /*.arcsData(arcsData)
-                .arcColor(() => '#37C391')
-                .arcDashLength(.75)
-                .arcDashGap(0.25)
-                .arcDashAnimateTime(() => 5000)
-                .arcStroke(1.35)
+                .arcsData(arcDataConcat)
+                .arcColor('color')
+                .arcDashLength('arcDashLength')
+                .arcDashGap('arcDashGap')
+                .arcDashAnimateTime('arcDashAnimateTime')
+                .arcStroke('arcStroke')
                 .arcCurveResolution(120)
                 .arcsTransitionDuration(500)
-                .arcAltitude(0.2)
-                .arcCircularResolution(12)*/
+                .arcAltitude('arcAltitude')
+                .arcCircularResolution(12)
             (document.getElementById('globeViz'))
 
             world.pointsData(locations)
@@ -393,53 +336,7 @@
 
             world.controls().autoRotate = true;
             world.controls().autoRotateSpeed = 0.2;
-            world.pointOfView({ lat: 48.78654, lng: 9.18164, altitude: 2})
-        </script>
-        <script>
-            //get necessary time elements
-            const daysElement =document.getElementById('days');
-            const hoursElement =document.getElementById('hours');
-            const minutesElement =document.getElementById('minutes');
-            const secondsElement =document.getElementById('seconds');
-            
-            //target date definition
-            const newDate = `20 Mar 2023, 15:00`;
-            
-            function countdown () {
-                const currentDate =new Date();
-                const newDate2 = new Date(newDate);
-            
-                const totalSeconds =(newDate2 - currentDate)/ 1000;
-            
-                if (totalSeconds >= 0) {
-            
-                const days = Math.floor(totalSeconds / 3600 / 24); /* Math.floor sets full number */
-                const hours = Math.floor(((totalSeconds/3600) % 24)); /* Module for hours here, how much is left until 24 is full */
-                const minutes = Math.floor(totalSeconds/60) % 60; /* Module for minutess here, how much is left until 60 is full*/
-                const seconds = Math.floor(totalSeconds) % 60;                 /* How much until 60 left */
-            
-                daysElement.innerHTML = days;
-                hoursElement.innerHTML = formatTime(hours);
-                minutesElement.innerHTML = formatTime(minutes);
-                secondsElement.innerHTML = formatTime(seconds);
-            
-                } else {
-                daysElement.innerHTML = 0;
-                hoursElement.innerHTML = 0;
-                minutesElement.innerHTML = 0;
-                secondsElement.innerHTML = 0;
-                };
-            }
-            
-            function formatTime(time) {
-                return time < 10 ? (`0${time}`) : time;         /* if less than 10 time period remaining, show 0 infront */
-            }
-            
-            //Initial call to get Miliseconds until New Years
-            countdown();
-            
-            //get Seconds until New Years
-            setInterval(countdown, 1000);
+            world.pointOfView({ lat: -23.58018, lng: -46.67793, altitude: 2})
         </script>
         <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
         <script>

@@ -242,16 +242,17 @@
             <h1>Bereit für Bewegung</h1>
         </div>
         <div class="km_situation">
-            <p><u>Aktueller Stand:</u><br><b class="km_stand">0</b> / 50.889 km <br>geschafft<br>
+            <p><u>Aktueller Stand:</u><br><b class="km_stand">500</b> / 50.889 km <br>geschafft<br>
             <a href="ranking.html">Ranking der Teams einsehen</a></p>
         </div>
     
         <script>
             //point information
             let locations = [
-                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Stuttgart</h1>', descr: 'Hauptsitz der LBBW', lat: 48.78654, lng: 9.18164, color: '#37C391', altitude: 0.015, radius: 0.8},
-                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Hamburg</h1>', descr: '', lat: 53.55167, lng: 9.98858, color: '#37C391', altitude: 0.015, radius: 0.8},
-                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Leipzig</h1>', descr: '', lat: 51.34658, lng: 12.37373, color: '#37C391', altitude: 0.015, radius: 0.8},
+                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Stuttgart</h1>', descr: 'Hauptsitz der LBBW', lat: 48.78654, lng: 9.18164, color: '#37C391', altitude: 0.015, radius: 0.6},
+                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Mannheim</h1>', descr: '', lat: 49.48152, lng: 8.48350, color: '#37C391', altitude: 0.015, radius: 0.4},
+                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Mainz</h1>', descr: '', lat: 50.01624, lng: 8.25410, color: '#37C391', altitude: 0.015, radius: 0.4},
+                {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Karlsruhe</h1>', descr: '', lat: 49.00522, lng: 8.41421, color:'#37C391', altitude: 0.015, radius: 0.4},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">New York</h1>', descr: '', lat: 40.75815, lng: -73.98238, color:'#37C391', altitude: 0.015, radius: 0.8},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">Mexiko</h1>', descr: '', lat: 19.36679, lng: -99.26066, color:'#37C391', altitude: 0.015, radius: 0.8},
                 {name: '<h1 style="font-family:Arial;font-size: 2rem;color: #9CE1C9">São Paulo</h1>', descr: '', lat: -23.58018, lng: -46.67793, color:'#37C391', altitude: 0.015, radius: 0.8},
@@ -274,52 +275,27 @@
 
             // Arc Data for Path
             const N = 2;
-            const dataArc = [[]];
-            const provWay =[[-23.58018, -46.67793, 19.36679, -99.26066], [19.36679, -99.26066, 40.75815, -73.98238], [40.75815, -73.98238, 46.65027, -79.37880], [46.65027, -79.37880, 51.52081, -0.07922],
-                            [51.52081, -0.07922, 53.55167, 9.98858], [53.55167, 9.98858, 48.78654, 9.18164], [48.78654,9.18164, 51.34658, 12.37373], [51.34658, 12.37373, 48.20763, 16.37081],
-                            [48.20763, 16.37081, 41.08184, 29.02198], [41.08184, 29.02198, 55.75005, 37.53780], [55.75005, 37.53780, 41.33758, 69.28226], [41.33758, 69.28226, 25.21257, 55.28136],
-                            [25.21257, 55.28136, 18.92582, 72.82412], [18.92582, 72.82412, 39.95379, 116.46452], [39.95379, 116.46452, 37.56853, 126.97824], [37.56853, 126.97824, 31.13394, 121.77796],
-                            [31.13394, 121.77796, 21.02131, 105.85564], [21.02131, 105.85564, 1.27710, 103.84800], [1.27710, 103.84800, -6.19541, 106.82189]];
+            const dataArc = [[-23.58018, -46.67793,19.36679,-99.26066], [19.36679, -99.26066, 40.75815, -73.98238]];
 
-            const arcsData = provWay.map((currElement, index) => ({
-                startLat: provWay[index][0],
-                startLng: provWay[index][1],
-                endLat: provWay[index][2],
-                endLng: provWay[index][3],
-                color: 'red',
-                arcDashAnimateTime: 0,
-                arcStroke: .75,
-                arcAltitude: .08,
-                arcDashGap: .05,
-                arcDashLength: .15
-                }));
-            const arcData2 = dataArc.map((currElement, index) => ({
+            const arcsData = dataArc.map((currElement, index) => ({
                 startLat: dataArc[index][0],
                 startLng: dataArc[index][1],
                 endLat: dataArc[index][2],
                 endLng: dataArc[index][3],
-                color: '#37C391',
-                arcDashAnimateTime: 5000,
-                arcStroke: 1.35,
-                arcAltitude: .2,
-                arcDashGap: .25,
-                arcDashLength: .75
                 }));
-
-            const arcDataConcat = arcsData.concat(arcData2);
 
             const world =  Globe()
                 .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')          
                 .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-                .arcsData(arcDataConcat)
-                .arcColor('color')
-                .arcDashLength('arcDashLength')
-                .arcDashGap('arcDashGap')
-                .arcDashAnimateTime('arcDashAnimateTime')
-                .arcStroke('arcStroke')
+                .arcsData(arcsData)
+                .arcColor(() => '#37C391')
+                .arcDashLength(.75)
+                .arcDashGap(0.25)
+                .arcDashAnimateTime(() => 5000)
+                .arcStroke(1.35)
                 .arcCurveResolution(120)
                 .arcsTransitionDuration(500)
-                .arcAltitude('arcAltitude')
+                .arcAltitude(.2)
                 .arcCircularResolution(12)
             (document.getElementById('globeViz'))
 

@@ -79,7 +79,7 @@
         <script>
                     //definition of variables
 
-            let dataSetPrep = [50, 0, 10, 0, 25, 0];     //dataset to be used
+            let dataSetPrep = [0, 0, 0, 0, 0, 0];     //dataset to be used
 
             let dataSet = dataSetPrep.sort().reverse()
 
@@ -114,7 +114,7 @@
             };
 
             //config of chart display
-
+            Chart.defaults.font.size = 16;
             config = {                 
                 type: 'bar',
                 data,
@@ -135,7 +135,7 @@
                                 display: true,
                                 text: 'Gesammelte Kilometer',
                                 font: {
-                                    size: 14,
+                                    size: 18,
                                 },
                             },
                         },

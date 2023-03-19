@@ -79,7 +79,7 @@
         <script>
                     //definition of variables
 
-            let dataSet = [50, 0, 10, 0, 25, 0];     //dataset to be used
+            let dataSet = [0, 0, 0, 0, 0, 0];     //dataset to be used
 
             let maxVal = Math.max(...dataSet);                              //max. value in dataset to define height of y-axes and way of chart setup
 
@@ -112,7 +112,7 @@
             };
 
             //config of chart display
-
+            Chart.defaults.font.size = 16;
             config = {                 
                 type: 'bar',
                 data,
@@ -133,7 +133,7 @@
                                 display: true,
                                 text: 'Gesammelte Kilometer',
                                 font: {
-                                    size: 14,
+                                    size: 20,
                                 },
                             },
                         },
