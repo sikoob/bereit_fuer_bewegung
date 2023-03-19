@@ -6,15 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
         <style> 
-            body { margin: 0; 
+            * {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body { 
+                margin: 0; 
             } 
+
+            #globeViz {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: black;
+
+            }
 
             .class_km{
                 z-index: 1000;
             }    
 
+            .headline{
+                display: block;
+                position: absolute;
+                z-index: 1000;
+                margin: auto;
+                width: 100%;
+            }    
+
+            h1 {
+                color:#37C391;
+                margin: auto;
+                text-align: center;
+                font-size: 5rem;
+            }
+
             p {
-                font-family: Arial, Helvetica, sans-serif;
                 display: block;
                 position: absolute;
                 top: 0.5rem;
@@ -24,7 +53,8 @@
             }
 
             u {
-                font-size: 2rem;
+                color: #37C391;
+                font-size: 3.75rem;
             }
 
             b {
@@ -38,8 +68,12 @@
             }
 
             @media (max-width: 56.25em) {
+                h1 {
+                    font-size: 2rem;
+                }
+
                 p {
-                    top: 0;
+                    top: 2rem;
                     left: 1rem;
                     font-size: 1rem;
                     background-color: rgba(18,50,80,0.65);
@@ -57,180 +91,7 @@
                     font-size: 1.5rem;
                 }
             } 
-            #globeViz {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-color: black;
-
-            }
-
-
-            h1 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-weight: bold;
-                color: #37C391;
-                text-shadow: 0 0 0.25rem #123250;
-                font-size: 2.3rem;
-                text-align: center;
-                margin-bottom: 5rem;
-            }
-
-            u {
-                font-family: Arial, Helvetica, sans-serif;
-                font-weight: bold;
-                color: #37C391;
-                text-shadow: 0 0 0.25rem #123250;
-                font-size: 3rem;
-                text-align: center;
-                margin-bottom: 5rem;
-            }
-
-            h2 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-weight: bold;
-                color: #37C391;
-                text-shadow: 0 0 0.25rem #123250;
-                font-size: 4.2rem;
-                margin-top: 5rem;
-                text-align: center;
-            }
-
-            .countdown-container {
-                
-                display: flex;
-                flex-wrap: wrap;
-                justify-content:center;
-
-            }
-
-            /*Media Queries*/
-
-            @media (min-width: 166em) {
-                *{
-                font-size: 85%;
-                }
-            }
-
-            @media (min-width: 133em) {
-                *{
-                font-size: 80%;
-                }
-            }
-
-            @media (min-width: 100em) {
-                * {             
-                font-size: 75%; 
-                }                  
-            }
-
-            @media (max-width: 64em) {
-                .background {
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    overflow: hidden;
-                }
-
-                h1 {
-                    font-size: 4rem;
-                }
-
-                .big-text {
-                    font-size: 3.2rem;
-                }
-
-                span {
-                    font-size: 2rem;
-                    font-weight: 700;
-                }
-
-                h2 {
-                    font-size: 3rem;
-                    margin-top: 1.5rem;
-                }
-            }
-
-            @media (max-width: 48em) {
-                h1 {
-                    font-size: 3.7rem;
-                    margin-bottom: 1.5rem;
-                }
-
-                .big-text {
-                    font-size: 3rem;
-                }
-
-                span {
-                    font-size: 2rem;
-                    font-weight: 700;
-                }
-
-                h2 {
-                    font-size: 2.7rem;
-                    margin-top: 1.5rem;
-                }
-            }
-
-
-            @media (max-width: 36em) {
-                h1 {
-                    font-size: 3.5rem;
-                    margin-bottom: 1rem;
-                }
-
-                h2 {
-                    font-size: 2.7rem;
-                    margin-top: 1rem;
-                }
-
-                .big-text {
-                    font-size: 2.8rem;
-                }
-
-                span {
-                    font-size: 1.8rem;
-                    font-weight: 700;
-                }
-            }
-
-            @media (max-width:25em) {
-                h1 {
-                    font-size: 3rem;
-                }
-
-                h2 {
-                    font-size: 2.2rem;
-                }
-
-                .big-text {
-                    font-size: 2.4rem;
-                }
-
-                span {
-                    font-size: 1.4rem;
-                }
-            }
-
-            @media (max-width:20em) {
-                h1 {
-                    font-size: 2rem;
-                }
-
-                h2 {
-                    font-size: 1.7rem;
-                }
-
-                .big-text {
-                    font-size: 2rem;
-                }
-
-                span {
-                    font-size: 1.2rem;
-                }
-            }
+            
         </style>
     
         <script src="//unpkg.com/globe.gl"></script>
@@ -238,7 +99,7 @@
     </head>
     <body>
         <div id="globeViz"></div>
-        <div class="content_container">
+        <div class="headline">
             <h1>Bereit für Bewegung</h1>
         </div>
         <div class="km_situation">
