@@ -242,7 +242,7 @@
             <h1>Bereit für Bewegung</h1>
         </div>
         <div class="km_situation">
-            <p><u>Aktueller Stand:</u><br><b class="km_stand">500</b> / 50.889 km <br>geschafft<br>
+            <p><u>Aktueller Stand:</u><br><b class="km_stand">0</b> / 50.889 km <br>geschafft<br>
             <a href="ranking.html">Ranking der Teams einsehen</a></p>
         </div>
     
@@ -274,7 +274,7 @@
 
             // Arc Data for Path
             const N = 2;
-            const dataArc = [[-23.58018, -46.67793,19.36679,-99.26066], [19.36679, -99.26066, 40.75815, -73.98238]];
+            const dataArc = [[]];
             const provWay =[[-23.58018, -46.67793, 19.36679, -99.26066], [19.36679, -99.26066, 40.75815, -73.98238], [40.75815, -73.98238, 46.65027, -79.37880], [46.65027, -79.37880, 51.52081, -0.07922],
                             [51.52081, -0.07922, 53.55167, 9.98858], [53.55167, 9.98858, 48.78654, 9.18164], [48.78654,9.18164, 51.34658, 12.37373], [51.34658, 12.37373, 48.20763, 16.37081],
                             [48.20763, 16.37081, 41.08184, 29.02198], [41.08184, 29.02198, 55.75005, 37.53780], [55.75005, 37.53780, 41.33758, 69.28226], [41.33758, 69.28226, 25.21257, 55.28136],
@@ -288,9 +288,10 @@
                 endLng: provWay[index][3],
                 color: 'red',
                 arcDashAnimateTime: 0,
-                arcStroke: 1,
-                arcAltitude: .1,
-                arcDashGap: 0
+                arcStroke: .75,
+                arcAltitude: .08,
+                arcDashGap: .05,
+                arcDashLength: .15
                 }));
             const arcData2 = dataArc.map((currElement, index) => ({
                 startLat: dataArc[index][0],
@@ -301,7 +302,8 @@
                 arcDashAnimateTime: 5000,
                 arcStroke: 1.35,
                 arcAltitude: .2,
-                arcDashGap: .25
+                arcDashGap: .25,
+                arcDashLength: .75
                 }));
 
             const arcDataConcat = arcsData.concat(arcData2);
@@ -311,7 +313,7 @@
                 .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
                 .arcsData(arcDataConcat)
                 .arcColor('color')
-                .arcDashLength(.75)
+                .arcDashLength('arcDashLength')
                 .arcDashGap('arcDashGap')
                 .arcDashAnimateTime('arcDashAnimateTime')
                 .arcStroke('arcStroke')
