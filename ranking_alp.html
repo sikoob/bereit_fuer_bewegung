@@ -46,6 +46,8 @@
                 .text {
                     top: 0.2rem;
                     left: 0.2rem;
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 h1 {
@@ -54,6 +56,7 @@
 
                 a{
                     font-size: .75rem;
+                    margin-bottom: 0.15rem;
                 }
 
                 #chart-container {
@@ -68,7 +71,8 @@
         <div class="text">
             <h1>Ranking der gesammelten Kilometer je Team</h1>
             <a href="index.html">Zurück</a>
-            <a href="ranking.html">Sortierung nach gesammelten Kilometern</a>
+            <a href="ranking_part.html">Sortierung nach gesammelten Kilometern je Teilnehmer</a>
+            <a href="ranking.html">Sortierung nach gesammelten Kilometern je Team</a>
         </div>
         <div id ="chart-container" class="table-responsive">
             <canvas id="myChart" style="height:500px;" class="chart"></canvas>
@@ -78,20 +82,21 @@
         <script>
                     //definition of variables
 
-            let dataSet = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];     //dataset to be used
+            let dataSet = [114, 120, 96, 0, 0, 0, 6, 38, 39, 7, 0, 38, 0, 59, 194, 176, 0, 0, 27, 0, 0, 15, 52, 0, 0, 167, 18, 6, 38, 154, 0, 40, 0, 400, 0, 12];     //dataset to be used
 
             let maxVal = Math.max(...dataSet);                              //max. value in dataset to define height of y-axes and way of chart setup
 
-            let labelTeams = ['#SusAläuft', '3C2ST', 'Alternativlos', 'APAC', 'Corporate Finance', 'Der Norden ist oben', 'Die Hamburger Perlen', 'Die KaJo Bobbele', 
-                            'Die Roßbergs', "In Leipzig läuft's", 'Kesselflitzer', 'London Marathoners', 'Nachhaltig schnell', 'PoseiDonnas', 'PVM Ulm Biberach',
-                            'Roadrunners Mannheimer Oststadt', 'Schloßplatzchampions', 'S.T.I.E.R.', 'Stöcklesfetzer', 'Trainierende Trainees',  'The Walking Swimmers', 
+            let labelTeams = ['#SusAläuft', '3C2ST', '69 in Bewegung', 'Alternativlos', 'APAC', 'Corporate Finance', 'Der Norden ist oben', 'Die Hamburger Perlen', 'Die KaJo Bobbele', 
+                            'Die Roßbergs', 'Die Zollhafensprinter', 'Dreamteam Nord', 'GK Monnem', 'Happy Feet!', 'In Leipzig läuft\'s', 'Kesselflitzer', 'LBBW Spätzle Power', 'London Marathoners', 'Nachhaltig schnell', 
+                            'NRW - Niemand rennt weiter', 'PoseiDonnas', 'PVM Ulm Biberach', 'Roadrunners', 'Roadrunners Mannheimer Oststadt', 'RunGirls&Co. around the world', 'Schloßplatzchampions', 'Shake, Rattle & Go!', 
+                            'Sonnenläufer', 'Spätzlesrenner', 'S.T.I.E.R.', 'Stuttgart City Movers', 'Stöcklesfetzer', 'SüdLeasing Ost bewegt sich... (PP7)', 'The Walking Swimmers', 'Trainierende Trainees', 
                             'Walk&Talk @B20'];        //variable for teams to be displayed for easier modification
 
             let backgroundColors = ['rgba(18, 50, 80, 0.2)', 'rgba(55, 195, 155, 0.2)'];
 
             let borderColors = ['rgba(18, 50, 80, 0.5)', 'rgba(55, 195, 155, 0.5)'];
 
-            let stepSize = 20;
+            let stepSize = 40;
 
             let config = "";                                                //variable for chart configuration, defined in if-statement dependent on chart setup
 

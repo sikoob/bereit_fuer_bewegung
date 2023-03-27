@@ -70,9 +70,9 @@
     </head>
     <body>
         <div class="text">
-            <h1>Ranking der gesammelten Kilometer je Team</h1>
+            <h1>Ranking der gesammelten Kilometer pro Teilnehmer</h1>
             <a href="index.html">Zurück</a>
-            <a href="ranking_part.html">Sortierung nach gesammelten Kilometern je Teilnehmer</a>
+            <a href="ranking.html">Sortierung nach gesammelten Kilometern je Team</a>
             <a href="ranking_alp.html">Alphabetische Sortierung</a>
         </div>
         <div id ="chart-container" class="table-responsive">
@@ -83,13 +83,13 @@
         <script>
                     //definition of variables
 
-            let dataSet = [400, 194, 176, 167, 154, 120, 114, 96, 59, 52, 40, 39, 38, 38, 38, 27, 18, 15, 12, 7, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];      //dataset to be used
+            let dataSet = [159, 52, 46, 41, 40, 31, 27, 23, 20, 20, 19, 16, 13, 9, 8, 7, 6, 6, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];       //dataset to be used
 
             let maxVal = Math.max(...dataSet);                              //max. value in dataset to define height of y-axes and way of chart setup
 
-            let labelTeams = ['The Walking Swimmers', 'In Leipzig läuft\'s', 'Kesselflitzer', 'Schloßplatzchampions', 'S.T.I.E.R.', '3C2ST', '#SusAläuft', '69 in Bewegung', 'Happy Feet!', 
-                            'Roadrunners', 'Stöcklesfetzer', 'Die KaJo Bobbele', 'Spätzlesrenner', 'Die Hamburger Perlen', 'Dreamteam Nord', 'Nachhaltig schnell', 'Shake, Rattle & Go!', 
-                            'PVM Ulm Biberach', 'Walk&Talk @B20', 'Die Roßbergs', 'Sonnenläufer', 'Der Norden ist oben', 'Alternativlos', 'APAC', 'Corporate Finance', 'Die Zollhafensprinter', 
+            let labelTeams = ['The Walking Swimmers', '3C2ST', '69 in Bewegung', 'S.T.I.E.R.', 'Schloßplatzchampions', 'In Leipzig läuft\'s', 'Roadrunners', '#SusAläuft', 'Stöcklesfetzer', 'Die KaJo Bobbele', 
+                            'Happy Feet!', 'Kesselflitzer', 'Nachhaltig schnell', 'Shake, Rattle & Go!', 'Die Hamburger Perlen', 'PVM Ulm Biberach', 'Dreamteam Nord', 'Walk&Talk @B20', 
+                            'Die Roßbergs', 'Sonnenläufer', 'Spätzlesrenner', 'Der Norden ist oben', 'Alternativlos', 'APAC', 'Corporate Finance', 'Die Zollhafensprinter', 
                             'LBBW Spätzle Power', 'London Marathoners', 'NRW - Niemand rennt weiter', 'PoseiDonnas', 'Roadrunners Mannheimer Oststadt', 'RunGirls&Co. around the world', 
                             'Stuttgart City Movers', 'SüdLeasing Ost bewegt sich... (PP7)', 'Trainierende Trainees'];        //variable for teams to be displayed for easier modification
 
