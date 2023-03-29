@@ -83,21 +83,21 @@
         <script>
                     //definition of variables
 
-            let dataSet = [400, 194, 176, 167, 154, 120, 114, 96, 59, 52, 40, 39, 38, 38, 38, 27, 18, 15, 12, 7, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];      //dataset to be used
+            let dataSet = [690, 627, 612, 610, 480, 400, 290, 256, 208, 176, 167, 114, 72, 60, 59, 52, 48, 40, 39, 38, 38, 38, 27, 18, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];      //dataset to be used
 
             let maxVal = Math.max(...dataSet);                              //max. value in dataset to define height of y-axes and way of chart setup
 
-            let labelTeams = ['The Walking Swimmers', 'In Leipzig läuft\'s', 'Kesselflitzer', 'Schloßplatzchampions', 'S.T.I.E.R.', '3C2ST', '#SusAläuft', '69 in Bewegung', 'Happy Feet!', 
-                            'Roadrunners', 'Stöcklesfetzer', 'Die KaJo Bobbele', 'Spätzlesrenner', 'Die Hamburger Perlen', 'Dreamteam Nord', 'Nachhaltig schnell', 'Shake, Rattle & Go!', 
-                            'PVM Ulm Biberach', 'Walk&Talk @B20', 'Die Roßbergs', 'Sonnenläufer', 'Der Norden ist oben', 'Alternativlos', 'APAC', 'Corporate Finance', 'Die Zollhafensprinter', 
-                            'LBBW Spätzle Power', 'London Marathoners', 'NRW - Niemand rennt weiter', 'PoseiDonnas', 'Roadrunners Mannheimer Oststadt', 'RunGirls&Co. around the world', 
-                            'Stuttgart City Movers', 'SüdLeasing Ost bewegt sich... (PP7)', 'Trainierende Trainees'];        //variable for teams to be displayed for easier modification
+            let labelTeams = ['3C2ST', 'SüdLeasing Ost bewegt sich', 'S.T.I.E.R.', 'In Leipzig läuft\'s', 'GK Monnem', 'The Walking Swimmers', '69 in Bewegung', 'Der Norden ist oben', 
+                            'Die Zollhafensprinter', 'Kesselflitzer', 'Schloßplatzchampions', '#SusAläuft', 'Walk&Talk @B20', 'Die Roßbergs', 'Happy Feet!', 'Roadrunners', 'Sonnenläufer', 
+                            'Stöcklesfetzer', 'Die KaJo Bobbele', 'Die Hamburger Perlen', 'Spätzlesrenner', 'Dreamteam Nord', 'Nachhaltig schnell', 'Shake, Rattle & Go!', 'PVM Ulm Biberach',
+                            'Alternativlos', 'APAC', 'Corporate Finance', 'D24 Crazy Credit & Loan Officers', 'LBBW Spätzle Power', 'London Marathoners', 'NRW - Niemand rennt weiter', 
+                            'PoseiDonnas', 'Roadrunners Mannheimer Oststadt', 'Rudern@LBBW', 'RunGirls&Co. around the world', 'Stuttgart City Movers', 'Trainierende Trainees'];        //variable for teams to be displayed for easier modification
 
             let backgroundColors = ['rgba(18, 50, 80, 0.2)', 'rgba(55, 195, 155, 0.2)'];
 
             let borderColors = ['rgba(18, 50, 80, 0.5)', 'rgba(55, 195, 155, 0.5)'];
 
-            let stepSize = 40;
+            let stepSize = 100;
 
             let config = "";                                                //variable for chart configuration, defined in if-statement dependent on chart setup
 
@@ -133,20 +133,30 @@
                             beginAtZero: true,                      //beginning with 0
                             max: maxValCeil,                      //dependent on data input and step size
                             ticks: {
-                                stepSize: stepSize
+                                stepSize: stepSize,
+                                font: {
+                                    size: 11,
+                                }
                             },
                             title: {
                                 display: true,
                                 text: 'Gesammelte Kilometer',
                                 font: {
-                                    size: 18,
+                                    size: 16,
                                 },
                             },
                         },
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 12,
+                                }
+                            }
+                        }
                     },
                     plugins: {
                         legend: {
-                            display: false                   //to not display data labels in chart
+                            display: false                  //to not display data labels in chart               
                         }
                     }
                 }
