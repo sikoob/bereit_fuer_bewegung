@@ -76,22 +76,22 @@
             <a href="ranking_alp.html">Alphabetische Sortierung</a>
         </div>
         <div id ="chart-container" class="table-responsive">
-            <canvas id="myChart" style="height:500px;" class="chart"></canvas>
+            <canvas id="myChart" style="height:600px;width: 1200px" class="chart"></canvas>
         </div>
         <!--scripts for diagram displays  -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
                     //definition of variables
 
-            let dataSet = [690, 627, 612, 610, 480, 400, 290, 256, 208, 176, 167, 114, 72, 60, 59, 52, 48, 40, 39, 38, 38, 38, 27, 18, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];      //dataset to be used
+            let dataSet = [556, 348, 295, 277, 194, 176, 176, 167, 148, 96, 93, 88, 73, 66, 62, 59, 52, 42, 40, 38, 38, 27, 24, 18, 18, 15, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0];      //dataset to be used
 
             let maxVal = Math.max(...dataSet);                              //max. value in dataset to define height of y-axes and way of chart setup
 
-            let labelTeams = ['3C2ST', 'SüdLeasing Ost bewegt sich', 'S.T.I.E.R.', 'In Leipzig läuft\'s', 'GK Monnem', 'The Walking Swimmers', '69 in Bewegung', 'Der Norden ist oben', 
-                            'Die Zollhafensprinter', 'Kesselflitzer', 'Schloßplatzchampions', '#SusAläuft', 'Walk&Talk @B20', 'Die Roßbergs', 'Happy Feet!', 'Roadrunners', 'Sonnenläufer', 
-                            'Stöcklesfetzer', 'Die KaJo Bobbele', 'Die Hamburger Perlen', 'Spätzlesrenner', 'Dreamteam Nord', 'Nachhaltig schnell', 'Shake, Rattle & Go!', 'PVM Ulm Biberach',
-                            'Alternativlos', 'APAC', 'Corporate Finance', 'D24 Crazy Credit & Loan Officers', 'LBBW Spätzle Power', 'London Marathoners', 'NRW - Niemand rennt weiter', 
-                            'PoseiDonnas', 'Roadrunners Mannheimer Oststadt', 'Rudern@LBBW', 'RunGirls&Co. around the world', 'Stuttgart City Movers', 'Trainierende Trainees'];        //variable for teams to be displayed for easier modification
+            let labelTeams = ['The Walking Swimmers', 'Corporate Finance', 'S.T.I.E.R.', 'In Leipzig läuft\'s', '#SusAläuft', 'Kesselflitzer', '3C2ST', 'Schloßplatzchampions', '69 in Bewegung',
+                            'GK Monnem', 'SüdLeasing Ost bewegt sich', 'Die KaJo Bobbele', 'Die Hamburger Perlen', 'Der Norden ist oben', 'Sonnenläufer', 'Happy Feet!', 'Roadrunners',
+                            'Die Zollhafensprinter', 'Stöcklesfetzer', 'Spätzlesrenner', 'Dreamteam Nord', 'Nachhaltig schnell', 'Walk&Talk @B20', 'Die Roßbergs', 'Shake, Rattle & Go!', 
+                            'PVM Ulm Biberach', 'Roadrunners Mannheimer Oststadt', 'Alternativlos', 'APAC', 'D24 Crazy Credit & Loan Officers', 'LBBW Spätzle Power', 'London Marathoners', 
+                            'NRW - Niemand rennt weiter', 'PoseiDonnas', 'Rudern@LBBW', 'RunGirls&Co. around the world', 'Stuttgart City Movers', 'Trainierende Trainees'];        //variable for teams to be displayed for easier modification
 
             let backgroundColors = ['rgba(18, 50, 80, 0.2)', 'rgba(55, 195, 155, 0.2)'];
 
@@ -114,7 +114,7 @@
                     data: dataSet,                                      //data to be used
                     backgroundColor: backgroundColors,
                     borderColor: borderColors,
-                    borderWidth: 1,
+                    borderWidth: 0,
                     fill: true
                 }]
             };
