@@ -83,15 +83,18 @@
         <script>
                     //definition of variables
 
-            let dataSet = [237, 120, 87, 76, 69, 59, 53, 47, 42, 42, 40, 29, 27, 20, 19, 19, 16, 15, 13, 12, 11, 10, 9, 7, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0];       //dataset to be used
+            let dataSet = [237, 187, 120, 98, 87, 87, 80, 70, 68, 64, 63, 59, 47, 42, 42, 41, 40, 37, 26, 20, 17, 16, 15, 14, 11, 10, 10, 7, 6, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0];      //dataset to be used
 
             let maxVal = Math.max(...dataSet);                              //max. value in dataset to define height of y-axes and way of chart setup
 
-            let labelTeams = ['The Walking Swimmers', 'Corporate Finance', 'S.T.I.E.R.', '3C2ST', '69 in Bewegung', 'Die KaJo Bobbele', 'In Leipzig läuft\'s', 'GK Monnem', 'SüdLeasing Ost bewegt sich',
-                            '#SusAläuft', 'Schloßplatzchampions', 'Sonnenläufer', 'Roadrunners', 'Stöcklesfetzer', 'Happy Feet!', 'Der Norden ist oben', 'Kesselflitzer', 'Die Hamburger Perlen',
-                            'Nachhaltig schnell', 'Walk&Talk @B20', 'Die Zollhafensprinter', 'Die Roßbergs', 'Shake, Rattle & Go!', 'PVM Ulm Biberach',  'Dreamteam Nord',     
-                             'Roadrunners Mannheimer Oststadt', 'Spätzlesrenner',  'Alternativlos', 'APAC', 'D24 Crazy Credit & Loan Officers', 'LBBW Spätzle Power', 'London Marathoners', 
-                            'NRW - Niemand rennt weiter', 'PoseiDonnas', 'Rudern@LBBW', 'RunGirls&Co. around the world', 'Stuttgart City Movers', 'Trainierende Trainees'];
+            let labelTeams = ['The Walking Swimmers', '3C2ST', 'Corporate Finance', 'Happy Feet!', '69 in Bewegung', 'S.T.I.E.R.', 'NRW - Niemand rennt weiter', 'Shake, Rattle & Go!', 'In Leipzig läuft\'s', 
+                            'Nachhaltig schnell', 'Kesselflitzer', 'Die KaJo Bobbele', 'GK Monnem', 'SüdLeasing Ost bewegt sich', '#SusAläuft', 'Sonnenläufer', 'Schloßplatzchampions', 
+                            'Roadrunners', 'Der Norden ist oben', 'Stöcklesfetzer', 'Stuttgart City Movers', 'Rudern@LBBW', 'Die Hamburger Perlen', 'Walk&Talk @B20', 'Die Zollhafensprinter', 
+                            'D24 Crazy Credit & Loan Officers', 'Die Roßbergs', 'PVM Ulm Biberach', 'Dreamteam Nord', 'Roadrunners Mannheimer Oststadt', 'Spätzlesrenner', 
+                            'Alternativlos', 'APAC', 'BW-Bank Neckar-Alb', 'Dancing Helpers', 'LBBW Spätzle Power', 'London Marathoners', 'Nicer Draiser',
+                            'PoseiDonnas', 'RUN-NaLe', 'RunGirls&Co. around the world', 'Trainierende Trainees'];        //variable for teams to be displayed for easier modification 
+
+
             let backgroundColors = ['rgba(18, 50, 80, 0.2)', 'rgba(55, 195, 155, 0.2)'];
 
             let borderColors = ['rgba(18, 50, 80, 0.5)', 'rgba(55, 195, 155, 0.5)'];
